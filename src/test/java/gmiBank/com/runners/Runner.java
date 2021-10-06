@@ -5,7 +5,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-public class Runner {
+
     //RunWith,  Junit icinde oldugu icin cucumber kullandik. TestNG kullanmadik
     @RunWith(Cucumber.class)
     @CucumberOptions(
@@ -37,7 +37,7 @@ public class Runner {
             features = "src/test/resources/features",
             //stepDefinitions package ismiu
             //3
-            glue = "bank/com/stepDefinitions",
+            glue = "gmiBank/com/stepDefinitions",
             //boylece packageleri birbirine bagladik
             //bu iki paket altinda kac tane class olursa olsun herhandi bir clasta yazilan her aadim
             //diger classlardaki adimlarla uyusurssa yeni adim olusturmaya gerek kalmaz
@@ -47,7 +47,7 @@ public class Runner {
 //        tags="@ali or miniregression"
 
 
-            tags = "@US_025",
+            tags = "@us_001",
 
 
             //tags="@istediginiz tag", TEstNG de gordugumuz group gibi calisir
@@ -66,8 +66,8 @@ public class Runner {
             // dryRun=false => oldugunda test caseleri calsitirmayi dener eksik step bulursa onu rapor eder
     )
 
-    public class TestRunner {
+    public class Runner {
 
-    }
+
 }
 
