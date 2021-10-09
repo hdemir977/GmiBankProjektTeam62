@@ -1,0 +1,167 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-10-08T17:04:58.498Z",
+        "line": 24,
+        "name": "İngilizce veya Türkçe dışında başka bir dil seçeneği olmamalıdır.",
+        "description": "",
+        "id": "sistem--geçersiz-kimlik-bilgileriyle-güncelleme-yapılmasına-izin-vermemelidir.;i̇ngilizce-veya-türkçe-dışında-başka-bir-dil-seçeneği-olmamalıdır.",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 14259684200,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "Kullanici \"gmi_url\" anasayfasina gider.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"gmi_url\"",
+                  "offset": 10
+                }
+              ],
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullaniciAnasayfasinaGider(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 133090200,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "Kullanici sag ustte bulunan insan figurune tiklar.",
+            "match": {
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullanici_sag_ustte_bulunan_insan_figurune_tiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 301283900,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "Kullanici sign in butonuna tiklar",
+            "match": {
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullanici_sign_in_butonuna_tiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 166717800,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "Kullanici username textbox\u0027ina \"adminusername\" datasini girer.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"adminusername\"",
+                  "offset": 31
+                }
+              ],
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullanici_username_textbox_ina_datasini_girer(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 252286700,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "Kullanici pasword textbox\u0027ina \"adminpassword\" datasini girer.",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"adminpassword\"",
+                  "offset": 30
+                }
+              ],
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullanici_pasword_textbox_ina_datasini_girer(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 205673500,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "Kullanici sign in butonunu tiklar.",
+            "match": {
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullanici_sign_in_butonunu_tiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 761681800,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Kullanici isminin oldugu(Salih Sen)\u0027i tiklar.",
+            "match": {
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullaniciIsmininOlduguSalihSenITiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 107001000,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "Kullanici user info butonunu tiklar.",
+            "match": {
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullanici_user_info_butonunu_tiklar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 738478900,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "Kullanici language butonunu tikladiginda sadece Ingilizce ve Turkce dil seceneklerini gormelidir.",
+            "match": {
+              "location": "gmiBank.com.stepDefinitions.US_007_UserInfo_StepDefs.kullaniciLanguageButonunuTikladigindaSadeceIngilizceVeTurkceDilSecenekleriniGormelidir()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@US_007"
+          },
+          {
+            "name": "@TC02"
+          }
+        ]
+      }
+    ],
+    "name": "Sistem, geçersiz kimlik bilgileriyle güncelleme yapılmasına izin vermemelidir.",
+    "description": "",
+    "id": "sistem--geçersiz-kimlik-bilgileriyle-güncelleme-yapılmasına-izin-vermemelidir.",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/us_007_userinfo.feature",
+    "tags": [
+      {
+        "name": "@US_007",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

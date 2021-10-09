@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="17.393">
+    <testcase classname="Sistem, geçersiz kimlik bilgileriyle güncelleme yapılmasına izin vermemelidir." name="İngilizce veya Türkçe dışında başka bir dil seçeneği olmamalıdır." time="17.057">
+        <system-out>
+            <![CDATA[Given Kullanici "gmi_url" anasayfasina gider................................passed
+And Kullanici sag ustte bulunan insan figurune tiklar.......................passed
+And Kullanici sign in butonuna tiklar.......................................passed
+And Kullanici username textbox'ina "adminusername" datasini girer...........passed
+And Kullanici pasword textbox'ina "adminpassword" datasini girer............passed
+And Kullanici sign in butonunu tiklar.......................................passed
+And Kullanici isminin oldugu(Salih Sen)'i tiklar............................passed
+And Kullanici user info butonunu tiklar.....................................passed
+Then Kullanici language butonunu tikladiginda sadece Ingilizce ve Turkce dil seceneklerini gormelidir..passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

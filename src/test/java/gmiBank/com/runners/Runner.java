@@ -47,7 +47,7 @@ import org.junit.runner.RunWith;
 //        tags="@ali or miniregression"
 
 
-            tags = "@us_001",
+            tags = "@TC02",
 
 
             //tags="@istediginiz tag", TEstNG de gordugumuz group gibi calisir
@@ -61,7 +61,7 @@ import org.junit.runner.RunWith;
             //TAG kapatilirsa tamamini calistirir. yani bir tag belirtmezsek hepsi calisir
 
             //5
-            dryRun = true
+            dryRun = false
             // dryRun=true oldugunda test caseleri calistirmayi denemeden sadece eksik olan stepleri bana verir
             // dryRun=false => oldugunda test caseleri calsitirmayi dener eksik step bulursa onu rapor eder
     )
