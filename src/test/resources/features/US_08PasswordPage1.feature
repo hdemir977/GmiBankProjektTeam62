@@ -4,7 +4,7 @@ Feature: Password Page Functionality
   Background: The user logged in and go to password page
 
     Given Given User navigates go to "gmi_url"
-    Then click menu icon
+    Then click menu icon1
     Then user logged in with a valid username and password
     Then User clicks to account menu
     Then User clicks to password button

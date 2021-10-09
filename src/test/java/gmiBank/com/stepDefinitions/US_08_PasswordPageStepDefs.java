@@ -18,7 +18,7 @@ public class US_08_PasswordPageStepDefs {
         Driver.getDriver().get(ConfigReader.getProperty(string));
 
     }
-    @Then("click menu icon")
+    @Then("click menu icon1")
     public void click_menu_icon() {
         passpage.menuIcon.click();
     }
