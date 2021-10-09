@@ -2,13 +2,22 @@ package gmiBank.com.stepDefinitions;
 
 import gmiBank.com.pages.US_08PasswordPage;
 import gmiBank.com.utilities.ConfigReader;
+import gmiBank.com.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
 
 public class US_08_PasswordPageStepDefs {
 
     US_08PasswordPage passpage=new US_08PasswordPage();
+
+    @Given("Given User navigates go to {string}")
+    public void givenUserNavigatesGoTo(String string) {
+
+        Driver.getDriver().get(ConfigReader.getProperty(string));
+
+    }
 
     @Then("user logged in with a valid username and password")
     public void userLoggedInWithAValidUsernameAndPassword() {
