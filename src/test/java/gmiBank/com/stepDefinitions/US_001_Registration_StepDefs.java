@@ -13,9 +13,9 @@ public class US_001_Registration_StepDefs {
 
     RegistrationPage registrationPage=new RegistrationPage();
     Faker faker=new Faker();
+    String password="";
 
-
-    @Given("Given User navigates go to {string}")
+    @Given("User navigates go to {string}")
     public void givenUserNavigatesGoTo(String string) {
 
         Driver.getDriver().get(ConfigReader.getProperty(string));
@@ -97,4 +97,68 @@ public class US_001_Registration_StepDefs {
 }
 
 
+    // =========JAVA FAKER===============
+
+    @And("enter valid ssn no  with JavaFaker {string}")
+    public void enterValidSsnNoWithJavaFaker(String string) {
+
+        registrationPage.ssnTextBox.sendKeys(faker.idNumber().ssnValid());
+    }
+
+    @And("enter valid first name with JavaFaker {string}")
+    public void enterValidFirstNameWithJavaFaker(String string) {
+        registrationPage.firstNameTextBox.sendKeys(faker.name().firstName());
+
+    }
+
+    @And("enter valid last name with JavaFaker {string}")
+    public void enterValidLastNameWithJavaFaker(String string) {
+        registrationPage.lastNameTextBox.sendKeys(faker.name().lastName());
+
+    }
+
+    @And("enter valid adress with JavaFaker {string}")
+    public void enterValidAdressWithJavaFaker(String string) {
+        registrationPage.adressTextBox.sendKeys(faker.address().fullAddress());
+    }
+
+    @And("enter valid phone number with JavaFaker {string}")
+    public void enterValidPhoneNumberWithJavaFaker(String string) {
+
+        registrationPage.phoneNumberTextBox.sendKeys(faker.phoneNumber().phoneNumber());
+    }
+
+    @And("enter valid username with JavaFaker {string}")
+    public void enterValidUsernameWithJavaFaker(String string) {
+        registrationPage.usernameTextBox.sendKeys(faker.name().username());
+
+    }
+
+    @And("enter valid email with JavaFaker {string}")
+    public void enterValidEmailWithJavaFaker(String string) {
+        registrationPage.emailTextBox.sendKeys(faker.internet().emailAddress());
+    }
+
+    @And("enter new password with JavaFaker {string}")
+    public void enterNewPasswordWithJavaFaker(String string) throws InterruptedException {
+
+        String password=faker.internet().password(7,15,true,true,true);
+        System.out.println("new password : " + password);
+        registrationPage.firstPasswordTextBox.sendKeys(password);
+        Thread.sleep(3000);
+
+    }
+
+    @And("enter new password confirmation with JavaFaker {string}")
+    public void enterNewPasswordConfirmationWithJavaFaker(String string) {
+
+        Driver.waitAndSendText(registrationPage.secondPasswordTextBox,password,10);
+        //registrationPage.secondPasswordTextBox.sendKeys(password);
+    }
+
+    @And("user click on Register button and validates success message saved as {string}")
+    public void userClickOnRegisterButtonAndValidatesSuccessMessageSavedAs(String string) {
+
+
+    }
 }
