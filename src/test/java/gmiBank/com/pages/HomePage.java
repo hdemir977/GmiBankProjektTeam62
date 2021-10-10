@@ -11,8 +11,8 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(id = "account-menu")
-    public WebElement menuIcon;
+    @FindBy(id="login-item")
+    public WebElement signinbuttona;
 
     @FindBy(partialLinkText = "Sign in")
     public WebElement homePageSignIn;
