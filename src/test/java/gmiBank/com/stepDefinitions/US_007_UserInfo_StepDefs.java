@@ -8,8 +8,13 @@ import gmiBank.com.utilities.ConfigReader;
 import gmiBank.com.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class US_007_UserInfo_StepDefs {
@@ -63,8 +68,8 @@ public class US_007_UserInfo_StepDefs {
     @And("Kullanici email checkbox'ina {string} girer.")
     public void kullaniciEmailCheckboxInaGirer(String string) {
         us_007_userInfoPage.emailBox.clear();
-       // us_007_userInfoPage.emailBox.sendKeys(ConfigReader.getProperty(string));
-        us_007_userInfoPage.emailBox.sendKeys(string);
+        us_007_userInfoPage.emailBox.sendKeys(ConfigReader.getProperty(string));
+        //us_007_userInfoPage.emailBox.sendKeys(string);
     }
     @Then("Kullanici gecersiz datayi girdikten sonra {string} mesajini almalidir.")
     public void kullanici_gecersiz_datayi_girdikten_sonra_mesajini_almalidir(String string) {
@@ -74,11 +79,25 @@ public class US_007_UserInfo_StepDefs {
         Assert.assertEquals(actualMessage,expectedMessage);
     }
 
+    @Then("Kullanici sayfayi kapatir.")
+    public void kullaniciSayfayiKapatir() {
+        Driver.closeDriver();
+    }
+
      //TC_02
-    @Then("Kullanici language butonunu tikladiginda sadece Ingilizce ve Turkce dil seceneklerini gormelidir.")
+
+
+    @Given("Kullanici language butonunu tikladiginda sadece Ingilizce ve Turkce dil seceneklerini gormelidir.")
     public void kullaniciLanguageButonunuTikladigindaSadeceIngilizceVeTurkceDilSecenekleriniGormelidir() {
 
-
-
+        Select selectListe=new Select(us_007_userInfoPage.lanquageSelect);
+        List<WebElement> languesList=selectListe.getOptions();
+        for (WebElement each:languesList) {
+            System.out.println(each.getText());
+            Assert.assertTrue(each.getText().contains("English") || each.getText().contains("Türkçe"));
+        }
     }
+
+
+
 }

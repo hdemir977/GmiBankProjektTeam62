@@ -35,3 +35,4 @@ Feature: US001 Registration Page
       Examples:
       |SSN|firstname|lastname|address|mobilephone|username|email|firstpassword|secondpassword|message|
       |   |         |        |       |           |        |     |             |              |       |
+      |   |         |        |       |           |        |     |             |              |       |
