@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="30.303">
+    <testcase classname="US010 Customer address creation" name="1" time="29.856">
+        <system-out>
+            <![CDATA[Given Given User navigates to "gmi_url".....................................passed
+And click menu icon.........................................................passed
+And click sign in option....................................................passed
+And enter valid username "username_manager".................................passed
+And enter valid password "newpassword_manager"..............................passed
+And click on sign in button.................................................passed
+And click on My Operations..................................................passed
+And click on Manage Customers...............................................passed
+And click on Create a New Customer..........................................passed
+And send "SSN" to SSN text box..............................................passed
+And click on Search button..................................................passed
+And send "middle_initial" to Middle Initial text box........................passed
+And Enter a valid Phone number "phone_number"...............................passed
+And Enter a valid Zip Code "zip_code".......................................passed
+And Delete the text in Address Text Box.....................................passed
+And delete the text in state text box.......................................passed
+And click on Save button2...................................................passed
+And verify this field is required text under Address text box...............passed
+And verify this field is required text under city text box..................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
