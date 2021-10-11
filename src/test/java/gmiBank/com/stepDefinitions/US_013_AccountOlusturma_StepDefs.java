@@ -3,13 +3,17 @@ package gmiBank.com.stepDefinitions;
 import gmiBank.com.pages.*;
 import gmiBank.com.utilities.ConfigReader;
 import gmiBank.com.utilities.Driver;
+import groovyjarjarasm.asm.tree.TryCatchBlockNode;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
+import java.util.List;
 
 public class US_013_AccountOlusturma_StepDefs {
     US_007_UserInfoPage us_007_userInfoPage = new US_007_UserInfoPage();
@@ -20,6 +24,7 @@ public class US_013_AccountOlusturma_StepDefs {
     Actions actions = new Actions(Driver.getDriver());
 
 
+
     @And("Kullanici myOperation butonunu tiklar.")
     public void kullaniciMyOperationButonunuTiklar() {
         us_013_accountOlusturmaPage.myOperations.click();
@@ -28,7 +33,6 @@ public class US_013_AccountOlusturma_StepDefs {
     @And("Kullanici manage account butonunu tiklar.")
     public void kullaniciManageAccountButonunuTiklar() {
         us_013_accountOlusturmaPage.manageAccounts.click();
-        Driver.wait(5);
     }
 
     @Then("Kullanici create new account botonunu tiklar.")
@@ -50,7 +54,12 @@ public class US_013_AccountOlusturma_StepDefs {
     //TC_02
     @Then("Kullanici acilir pencerede balance checkbox'ina {string} girebilmelidir.")
     public void kullaniciAcilirPenceredeBalanceCheckboxInaGirebilmelidir(String string) {
-        us_013_accountOlusturmaPage.balanceBox.sendKeys("10", Keys.ENTER);
+        us_013_accountOlusturmaPage.balanceBox.sendKeys(ConfigReader.getProperty("balancedeger")+ Keys.ENTER);
+        String girilenDeger=us_013_accountOlusturmaPage.balanceBox.getAttribute("value");
+        String expected=ConfigReader.getProperty("balancedeger");
+        Assert.assertEquals(girilenDeger,expected,"ilgili alan bos");
+
+
 
     }
 
@@ -82,10 +91,30 @@ public class US_013_AccountOlusturma_StepDefs {
         System.out.println(select.getFirstSelectedOption().getText());
         String expectedType = ConfigReader.getProperty(string);
         Assert.assertEquals(actualType, expectedType);
+        //String secili=us_013_accountOlusturmaPage.accountStatusTypeSelect.getText();
+        //System.out.println(secili);
+        //Assert.assertFalse(secili.isEmpty(),"Ilgili alanda hesap durumu secilemedi.");
     }
 
     @Then("Kullanici employee kismindan istege bagli olarak {string} secebilir.")
     public void kullaniciEmployeeKismindanIstegeBagliOlarakSecebilir(String string) {
+        Select select=new Select(us_013_accountOlusturmaPage.employeeSelect);
+
+        String actual=select.getFirstSelectedOption().getText();
+
+        System.out.println(actual);
+        try{
+            Assert.assertFalse(actual.isEmpty(),"Ilgili alan bos");
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            System.out.println("BUGG var");
+        }
+
+
+
+
+
 
 
     }

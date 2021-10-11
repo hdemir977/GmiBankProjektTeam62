@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="41.498">
-    <testcase classname="Calisan hesabiyla yeni bir banka hesabı(Account) oluşturabilir." name="TC_06 Kullanıcı açılır menüden bir çalışan seçebilir / İsteğe bağlı." time="41.042">
-        <failure message="Cannot locate option with index: 1&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-81SHUR7', ip: '172.31.2.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.NoSuchElementException">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="29.296">
+    <testcase classname="Calisan hesabiyla yeni bir banka hesabı(Account) oluşturabilir." name="TC_01 Kullanıcı yeni hesap için bir açıklama girmelidir. Bu kısım boş bırakılamaz." time="28.622">
+        <system-out>
             <![CDATA[Given Kullanici "gmi_url" anasayfasina gider................................passed
 And Kullanici sag ustte bulunan insan figurune tiklar.......................passed
 And Kullanici sign in butonuna tiklar.......................................passed
@@ -11,19 +11,8 @@ And Kullanici sign in butonunu tiklar.......................................pass
 And Kullanici myOperation butonunu tiklar...................................passed
 And Kullanici manage account butonunu tiklar................................passed
 Then Kullanici create new account botonunu tiklar...........................passed
-Then Kullanici employee kismindan istege bagli olarak "calisan" secebilir...failed
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 1
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-81SHUR7', ip: '172.31.2.19', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.setSelectedByIndex(Select.java:297)
-	at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:172)
-	at gmiBank.com.stepDefinitions.US_013_AccountOlusturma_StepDefs.kullaniciEmployeeKismindanIstegeBagliOlarakSecebilir(US_013_AccountOlusturma_StepDefs.java:90)
-	at ✽.Kullanici employee kismindan istege bagli olarak "calisan" secebilir.(file:///C:/Users/admin/git/GmiBankProjektTeam62/src/test/resources/features/us_013_accountolusturma.feature:31)
+Then Kullanici acilir pencere de description kismini bos birakirsa "invalidmessage" mesajini almalidir..passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
 </testsuite>

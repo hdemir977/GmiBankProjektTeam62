@@ -47,7 +47,7 @@ import org.junit.runner.RunWith;
 //        tags="@ali or miniregression"
 
 
-            tags = " @US_1306",
+            tags = "@US_1301",
 
 
             //tags="@istediginiz tag", TEstNG de gordugumuz group gibi calisir
