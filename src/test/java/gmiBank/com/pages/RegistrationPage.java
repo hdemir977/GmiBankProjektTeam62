@@ -40,7 +40,7 @@ public class RegistrationPage {
     @FindBy (xpath = "//input[@id='firstPassword']")
     public WebElement firstPasswordTextBox;
 
-    @FindBy (xpath = "  //input[@id='secondPassword']")
+    @FindBy (xpath = "//input[@name='secondPassword']")
     public WebElement secondPasswordTextBox;
 
     @FindBy (id ="register-submit")
