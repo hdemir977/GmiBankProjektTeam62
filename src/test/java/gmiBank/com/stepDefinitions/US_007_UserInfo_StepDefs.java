@@ -69,7 +69,7 @@ public class US_007_UserInfo_StepDefs {
     public void kullaniciEmailCheckboxInaGirer(String string) {
         us_007_userInfoPage.emailBox.clear();
         us_007_userInfoPage.emailBox.sendKeys(ConfigReader.getProperty(string));
-        //us_007_userInfoPage.emailBox.sendKeys(string);
+
     }
     @Then("Kullanici gecersiz datayi girdikten sonra {string} mesajini almalidir.")
     public void kullanici_gecersiz_datayi_girdikten_sonra_mesajini_almalidir(String string) {

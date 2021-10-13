@@ -23,6 +23,7 @@ Feature: Calisan hesabiyla yeni bir banka hesabı(Account) oluşturabilir.
     Then Kullanici acilir pencerede balance checkbox'ina "miktar" girebilmelidir.
     Then Kullanici sayfayi kapatir.
 
+    @US_1303
   Scenario: TC_03 Kullanici, ilk kez hesap oluştururken bakiye bos birakilmamalidir.
     Then Kullanici acilir pencerede balance checkbox'ini bos birakirsa "invalidmessage" mesajini almalidir.
     Then Kullanici sayfayi kapatir.
@@ -40,7 +41,7 @@ Feature: Calisan hesabiyla yeni bir banka hesabı(Account) oluşturabilir.
   @US_1306
   Scenario: TC_06 Kullanıcı açılır menüden bir çalışan seçebilir / İsteğe bağlı.
     Then Kullanici employee kismindan istege bagli olarak "calisan" secebilir.
-    Then Kullanici sayfayi kapatir.
+
 
 
 

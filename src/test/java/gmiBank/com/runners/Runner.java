@@ -47,9 +47,7 @@ import org.junit.runner.RunWith;
 //        tags="@ali or miniregression"
 
 
-            tags = "@US_1301",
-
-
+            tags = "@US_013",
             //tags="@istediginiz tag", TEstNG de gordugumuz group gibi calisir
             //tags="@smoke or miniregression" => boyle yapabiliriz. Or dersek veya
             // work in progress hangi feature veya senaryoyu calistiracagini bilmesi icin onemli
@@ -59,13 +57,11 @@ import org.junit.runner.RunWith;
             //And ==> dendiginde verilen ozellilerin tamamini tasiyan tag lar yazilir
             // OR => dendiginde yazilan taglardan herhangi birine veya daha fazlasina sahip olanlar calisir.
             //TAG kapatilirsa tamamini calistirir. yani bir tag belirtmezsek hepsi calisir
-
             //5
             dryRun = false
             // dryRun=true oldugunda test caseleri calistirmayi denemeden sadece eksik olan stepleri bana verir
             // dryRun=false => oldugunda test caseleri calsitirmayi dener eksik step bulursa onu rapor eder
     )
-
     public class Runner {
 
 
