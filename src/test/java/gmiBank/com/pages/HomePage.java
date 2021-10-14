@@ -20,4 +20,5 @@ public class HomePage {
     @FindBy(partialLinkText = "Register")
     public WebElement homePageRegister;
 
+
 }
