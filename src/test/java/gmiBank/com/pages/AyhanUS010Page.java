@@ -9,6 +9,11 @@ public class AyhanUS010Page {
     public AyhanUS010Page() {
         PageFactory.initElements(Driver.getDriver(),this);}
 
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement emailTextBoxBox;
+
+    @FindBy(xpath = "//input[@name='ssn']")
+    public WebElement ssnTextBox;
 
     @FindBy(xpath = "//*[@name='username']")
     public WebElement ManagerUserName;
@@ -29,13 +34,13 @@ public class AyhanUS010Page {
     public WebElement createANewCustomer;
 
     @FindBy(xpath = "//input[@id='search-ssn']")
-    public WebElement ssnTextBox;
+    public WebElement ssnTextBox1;
 
     @FindBy(xpath = "//button[@class='btn btn-secondary']")
     public WebElement searchButton;
 
     @FindBy(xpath = "//div[@role='alert']")
-    public WebElement popupAlert;
+    public WebElement toastMessage;
 
     @FindBy(xpath = "//input[@name='middleInitial']")
     public WebElement middleInitial;
