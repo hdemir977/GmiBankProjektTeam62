@@ -44,7 +44,7 @@ Background: User will be on gmi bank page
     Then click on Reset password
 
 @Scenario5
-  Scenario: 5. User can register an account
+  Scenario: 5. User can register an account proba samo
 
     Then Username Click
     Then Usernamefill
