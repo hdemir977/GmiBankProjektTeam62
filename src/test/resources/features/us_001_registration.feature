@@ -31,6 +31,7 @@ Feature: US001 Registration Page
       And enter new password with JavaFaker "<firstpassword>"
       And enter new password confirmation with JavaFaker "<secondpassword>"
       And user click on Register button and validates success message saved as "<message>"
+      Then user close page
 
       Examples:
       |SSN|firstname|lastname|address|mobilephone|username|email|firstpassword|secondpassword|message|

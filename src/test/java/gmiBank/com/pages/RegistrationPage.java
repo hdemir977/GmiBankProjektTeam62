@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage {
+
     public RegistrationPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -43,7 +44,7 @@ public class RegistrationPage {
     @FindBy (xpath = "//input[@name='secondPassword']")
     public WebElement secondPasswordTextBox;
 
-    @FindBy (id ="register-submit")
+    @FindBy (id = "register-submit")
     public WebElement registerButton;
 
     @FindBy(xpath = "//div[@style='pointer-events: none;']")

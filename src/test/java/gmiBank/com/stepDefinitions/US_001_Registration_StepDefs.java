@@ -13,7 +13,7 @@ public class US_001_Registration_StepDefs {
 
     RegistrationPage registrationPage=new RegistrationPage();
     Faker faker=new Faker();
-    String password="";
+    String password;
 
     @Given("User navigates go to {string}")
     public void givenUserNavigatesGoTo(String string) {
@@ -24,6 +24,7 @@ public class US_001_Registration_StepDefs {
 
     @Then("click menu icon")
     public void click_menu_icon() {
+
         registrationPage.menuIcon.click();
     }
 
@@ -142,23 +143,37 @@ public class US_001_Registration_StepDefs {
     @And("enter new password with JavaFaker {string}")
     public void enterNewPasswordWithJavaFaker(String string) throws InterruptedException {
 
-        String password=faker.internet().password(7,15,true,true,true);
+        password=faker.internet().password(7,15,true,true,true);
+        this.password=password;
         System.out.println("new password : " + password);
         registrationPage.firstPasswordTextBox.sendKeys(password);
-        Thread.sleep(3000);
+        Thread.sleep(2000);
+
+      //  registrationPage.secondPasswordTextBox.sendKeys(password);
 
     }
 
     @And("enter new password confirmation with JavaFaker {string}")
     public void enterNewPasswordConfirmationWithJavaFaker(String string) {
 
-        Driver.waitAndSendText(registrationPage.secondPasswordTextBox,password,10);
+       Driver.waitAndSendText(registrationPage.secondPasswordTextBox,password,10);
         //registrationPage.secondPasswordTextBox.sendKeys(password);
     }
 
     @And("user click on Register button and validates success message saved as {string}")
     public void userClickOnRegisterButtonAndValidatesSuccessMessageSavedAs(String string) {
 
+        registrationPage.registerButton.click();
 
+        Assert.assertTrue(registrationPage.savedMessage.isDisplayed());
+
+        System.out.println("=======registration process is succesfull with valid credentials==========");
+
+
+    }
+
+    @Then("user close page")
+    public void userClosePage() {
+        Driver.closeDriver();
     }
 }
