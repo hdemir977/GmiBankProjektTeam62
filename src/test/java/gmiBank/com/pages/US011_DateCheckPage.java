@@ -58,6 +58,9 @@ public class US011_DateCheckPage {
     @FindBy(xpath = "(//div[@role='alert'])[1]")
     public WebElement pupUpAlert;
 
+    @FindBy(id = "tp-customer-zelleEnrolled")
+    public WebElement zelleEnrolledButton;
+
 
 
 
