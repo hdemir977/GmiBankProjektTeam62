@@ -1,12 +1,13 @@
 package gmiBank.com.pages;
 
+import gmiBank.com.utilities.ConfigReader;
 import gmiBank.com.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-
+ HomePage homePage=new HomePage();
 
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -23,6 +24,22 @@ public class LoginPage {
 
     @FindBy(xpath = "//*[@type='submit']")
     public WebElement singInLogin;
+
+
+
+
+
+
+    public void loginExecution(){
+
+        homePage.menuIcon.click();
+        homePage.homePageSignIn.click();
+        userName.sendKeys(ConfigReader.getProperty("employee_username"));
+        newPassword.sendKeys(ConfigReader.getProperty("employee_password"));
+        singInLogin.click();
+
+    }
+
 
 
 }
