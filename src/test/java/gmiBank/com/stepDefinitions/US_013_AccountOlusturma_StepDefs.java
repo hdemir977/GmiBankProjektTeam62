@@ -3,17 +3,12 @@ package gmiBank.com.stepDefinitions;
 import gmiBank.com.pages.*;
 import gmiBank.com.utilities.ConfigReader;
 import gmiBank.com.utilities.Driver;
-import groovyjarjarasm.asm.tree.TryCatchBlockNode;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
-import java.util.List;
 
 public class US_013_AccountOlusturma_StepDefs {
     US_007_UserInfoPage us_007_userInfoPage = new US_007_UserInfoPage();
