@@ -6,6 +6,7 @@ import gmiBank.com.utilities.Driver;
 import gmiBank.com.utilities.JSUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -33,6 +34,9 @@ public class US_08_CreateaNewAccountStepDefs {
 
     @Then("User clicks to Create a new Account button")
     public void userClicksToCreateANewAccountButton() {
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        jsexecutor .executeScript ("window.scrollBy (0,-1000)");
+       // JSUtils.scrollIntoVIewJS(createaccount.createnewAccountButton);
         createaccount.createnewAccountButton.click();
     }
 
@@ -54,8 +58,10 @@ public class US_08_CreateaNewAccountStepDefs {
 
     @Then("User enter Save button.")
     public void userEnterSaveButton() {
+        Driver.wait(2);
         createaccount.saveButton.click();
         Driver.wait(10);
+
     }
 
     @And("User checks if new account has been created")
