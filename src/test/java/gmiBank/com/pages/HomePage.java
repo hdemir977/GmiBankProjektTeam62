@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
 
     public HomePage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -19,5 +20,6 @@ public class HomePage {
 
     @FindBy(partialLinkText = "Register")
     public WebElement homePageRegister;
+
 
 }

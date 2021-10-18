@@ -3,7 +3,6 @@ package gmiBank.com.stepDefinitions;
 import gmiBank.com.pages.US009Page;
 import gmiBank.com.utilities.ConfigReader;
 import gmiBank.com.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
 public class US009_Step {

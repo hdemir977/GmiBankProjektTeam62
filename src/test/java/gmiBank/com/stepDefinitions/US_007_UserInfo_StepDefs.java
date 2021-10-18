@@ -7,13 +7,11 @@ import gmiBank.com.pages.US_007_UserInfoPage;
 import gmiBank.com.utilities.ConfigReader;
 import gmiBank.com.utilities.Driver;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

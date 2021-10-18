@@ -96,7 +96,6 @@ public class US011_DateCheckStepDefs {
         System.out.println(text + " -> pup up window");
         // Assert.assertEquals(text, message, "Bug");
         Assert.assertTrue(text.contains(message));
-
     }
 
 
@@ -153,11 +152,33 @@ public class US011_DateCheckStepDefs {
     public void createDateTextboxAEksikTarihGir() {
     }
 
-    @Then("Tarih Text Box class degerinin invalid oldugunu test et")
-    public void tarihTextBoxClassDegerininInvalidOldugunuTestEt() {
-    }
-
     @And("Zelle Enrolled box a tik at")
     public void zelleEnrolledBoxATikAt() {
+        Driver.waitAndClick(DateCheckPage.zelleEnrolledButton,2);
+
+    }
+
+    @And("Create Date textbox a eksik tarih {string} gir")
+    public void createDateTextboxAEksikTarihGir(String date) {
+        Driver.waitAndSendText(DateCheckPage.createDateTextBox,date,2);
+        String text = DateCheckPage.createDateTextBox.getText();
+        Assert.assertTrue(text.contains(date),"BUGGG");
+    }
+    @Then("Tarih Text Box degerinin invalid oldugunu test et")
+    public void tarihTextBoxDegerininInvalidOldugunuTestEt() {
+    }
+
+
+    @And("user should fill to the fields without Hesap")
+    public void userShouldFillToTheFieldsWithoutHesap(DataTable dataTable) {
+        Map<String, String> map=dataTable.asMap(String.class, String.class);
+        Driver.waitAndSendText(DateCheckPage.middleInitialTextBox,map.get("middleInitial"),2);
+        Driver.waitAndSendText(DateCheckPage.phoneNumberTextBox,map.get("phoneNumber"),2);
+        Driver.waitAndSendText(DateCheckPage.zipCodeTextBox,map.get("zipCode"),2);
+        Driver.waitAndSendText(DateCheckPage.cityTextBox,map.get("city"),2);
+        Driver.waitAndSendText(DateCheckPage.createDateTextBox,map.get("date"),2);
+        Driver.waitAndSendText(DateCheckPage.countrySelect,map.get("ulke"),2);
+
+
     }
 }

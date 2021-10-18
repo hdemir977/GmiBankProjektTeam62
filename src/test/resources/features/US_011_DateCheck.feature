@@ -13,19 +13,21 @@ Feature:Date in page
     And SSN textbox a kayıtlı bir SSN no gir
     And Search butonuna tikla
 
+
+  @dateCheck
   Scenario: US_011_TC_01 Tarih, müşteri oluşturma anında oluşturulmalıdır.
     And user should fill to the fields
       | middleInitial | D            |
       | phoneNumber   | 654-789-6321 |
       | zipCode       | 45876        |
       | city          | Frankfurt    |
-      | date          | 14.10.2021   |
+      | date          | 15.10.2021   |
       | ulke          | USA          |
       | hesap         | asd          |
     Then Save botonuna tikla
-    Then Acilan Pup-up ifadesinin "translation-not-found" oldugunu dogrularr
+    Then Acilan Pup-up ifadesinin "Internal server error." oldugunu dogrularr
 
-
+  @dateCheck
   Scenario: US_011_TC_02 Girilen tarih, müşteri oluşturma anından daha erken veya geçmişte olamaz.
     And user should fill to the fields
       | middleInitial | D            |
@@ -38,15 +40,16 @@ Feature:Date in page
     And Save botonuna tikla
     Then Acilan Pup-up ifadesinin "Internal server error." oldugunu dogrularr
 
-
-
+  @dateCheck
   Scenario: US_011_TC_03 Tarih ay, gün, yıl, saat ve dakika olarak oluşturulmalıdır.
-    And Create Date textbox a eksik tarih gir
-    Then Tarih Text Box class degerinin invalid oldugunu test et
+    And Create Date textbox a eksik tarih "<mm.11.2021 22:00:00>" gir
+    Then Tarih Text Box degerinin invalid oldugunu test et
 
+    # 0021-02-25T00:00
 
+  @dateCheck
   Scenario: US_011_TC_04 Kullanıcı kayıtlı kullanıcılardan bir kullanıcı seçebilir ve bu kısmı boş bırakamaz
-    And user should fill to the fields
+    And user should fill to the fields without Hesap
       | middleInitial | D            |
       | phoneNumber   | 654-789-6321 |
       | zipCode       | 45876        |
@@ -57,7 +60,7 @@ Feature:Date in page
     And Save botonuna tikla
     Then Acilan Pup-up ifadesinin "Internal server error." oldugunu dogrularr
 
-
+  @dateCheck
   Scenario: US_011_TC_05 Kullanıcı isteğe bağlı olarak Zelle Enrolled seçeneğini seçebilir ve kaydedebilir.
     And user should fill to the fields
       | middleInitial | D            |
@@ -74,7 +77,8 @@ Feature:Date in page
 
 
 
-  Scenario: Enter a date
+
+  Scenario: ikinci yapi Enter a date
     And user should fill to the fields
       | middleInitial | D            |
       | phoneNumber   | 654-789-6321 |
@@ -95,6 +99,7 @@ Feature:Date in page
     And Create Date textbox a şu andaki tarihi data gir
     And County den bir ulke sec
     And Account dropdrowndan bir hesap sec
+
 
 
 
