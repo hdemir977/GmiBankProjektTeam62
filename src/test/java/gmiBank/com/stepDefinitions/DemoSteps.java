@@ -1,5 +1,6 @@
 package gmiBank.com.stepDefinitions;
 
+import com.github.javafaker.Faker;
 import gmiBank.com.pages.AyhanUS010Page;
 import gmiBank.com.pages.DemoPage;
 import gmiBank.com.pages.RegistrationPage;
@@ -14,6 +15,44 @@ public class DemoSteps {
     RegistrationPage registrationPage=new RegistrationPage();
     AyhanUS010Page ayhanUS010Page=new AyhanUS010Page();
     DemoPage demopage=new DemoPage();
+    Faker faker=new Faker();
+    String password="";
+
+
+    @Then("enter valid ssn no")
+    public void enter_valid_ssn_no() {
+        registrationPage.ssnTextBox.sendKeys(faker.idNumber().ssnValid());
+
+    }
+    @Then("enter valid first name")
+    public void enter_valid_first_name() {
+        registrationPage.firstNameTextBox.sendKeys(faker.name().firstName());
+
+    }
+    @Then("enter valid last name")
+    public void enter_valid_last_name() {
+
+        registrationPage.lastNameTextBox.sendKeys(faker.name().lastName());
+    }
+    @Then("enter valid adress")
+    public void enter_valid_adress() {
+        registrationPage.adressTextBox.sendKeys(faker.address().fullAddress());
+
+    }
+    @Then("enter valid email")
+    public void enter_valid_email() {
+        registrationPage.emailTextBox.sendKeys(faker.internet().emailAddress());
+
+    }
+
+
+
+    @Then("see registration saved")
+    public void see_registration_saved() {
+
+        Assert.assertTrue(registrationPage.savedMessage.isDisplayed());
+
+    }
 
     @And("enter valid ssn no {string} demo")
     public void enterValidSsnNoDemo(String ssn) {
@@ -129,7 +168,7 @@ public class DemoSteps {
     public void clickActivateButton(String adres) {
         Driver.wait(3);
         demopage.userEdit(adres).click();
-        //if (demopage.activatebox.getAttribute("value")=="false")
+        if (demopage.activatebox.getAttribute("value").contains("false"))
         demopage.activatebox.click();
         Driver.wait(5);
         demopage.singInLogin.click();
