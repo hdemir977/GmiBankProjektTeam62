@@ -1,6 +1,7 @@
 package gmiBank.com.pojos;
 
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties (ignoreUnknown = true)
@@ -22,8 +23,10 @@ public class Customer6 {
     private String ssn;
     private String createDate;
     private boolean zelleEnrolled;
+
     private Country6 country;//burada onceden String vardi(private String country). ancak string de bir class oldugundan ve
                             // ben Country6 classdeki datalara erisim istedigimiden String yerine Country6 classini yazabilirim.
+
     private String state;
     private User6 user;
     private String accounts;
@@ -199,6 +202,5 @@ public class Customer6 {
     },
      */
 }
-
 
 
