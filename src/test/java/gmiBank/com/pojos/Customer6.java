@@ -1,11 +1,16 @@
 package gmiBank.com.pojos;
 
+
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties (ignoreUnknown = true)
-public class Customer6 {
 
-    private  int id;
+
+public class Customer6 {
+//Aldigimiz butun customer bilgilerini classin icine yapistiriyoruz.
+// customer bilgileri icinden id yi aliyoruz ve saklamak icin private yapiyoruz.
+    private int id;
     private String firstName;
     private String lastName;
     private String middleInitial;
@@ -18,7 +23,10 @@ public class Customer6 {
     private String ssn;
     private String createDate;
     private boolean zelleEnrolled;
-    private Country6 country;
+
+    private Country6 country;//burada onceden String vardi(private String country). ancak string de bir class oldugundan ve
+                            // ben Country6 classdeki datalara erisim istedigimiden String yerine Country6 classini yazabilirim.
+
     private String state;
     private User6 user;
     private String accounts;
@@ -158,38 +166,41 @@ public class Customer6 {
     public void setAccounts(String accounts) {
         this.accounts = accounts;
     }
-//    {
-//        "id": 94774,
-//            "firstName": "Nikita",
-//            "lastName": "Ernser",
-//            "middleInitial": "S",
-//            "email": "nikitaernser@gmail.com",
-//            "mobilePhoneNumber": "479-124-5412489-121-8179",
-//            "phoneNumber": "1-036-189-7365",
-//            "zipCode": "73726-0455",
-//            "address": "05356 Cummerata Village",
-//            "city": "Fairfax",
-//            "ssn": "857-73-8822",
-//            "createDate": "2021-09-02T04:00:00Z",
-//            "zelleEnrolled": false,
-//            "country": {
-//        "id": 3,
-//                "name": "USA",
-//                "states": null
-//    },
-//        "state": "Virginia",
-//            "user": {
-//        "id": 94902,
-//                "login": "marc.weissnat",
-//                "firstName": "Nikita",
-//                "lastName": "Ernser",
-//                "email": "nikitaernser@gmail.com",
-//                "activated": true,
-//                "langKey": "en",
-//                "imageUrl": null,
-//                "resetDate": null
-//    },
-//        "accounts": null
-//    },
-//
+/*
+    {
+        "id": 94774,
+        "firstName": "Nikita",
+        "lastName": "Ernser",
+        "middleInitial": "S",
+        "email": "nikitaernser@gmail.com",
+        "mobilePhoneNumber": "479-124-5412489-121-8179",
+        "phoneNumber": "1-036-189-7365",
+        "zipCode": "73726-0455",
+        "address": "05356 Cummerata Village",
+        "city": "Fairfax",
+        "ssn": "857-73-8822",
+        "createDate": "2021-09-02T04:00:00Z",
+        "zelleEnrolled": false,
+        "country": {
+            "id": 3,
+            "name": "USA",
+            "states": null
+        },
+        "state": "Virginia",
+        "user": {
+            "id": 94902,
+            "login": "marc.weissnat",
+            "firstName": "Nikita",
+            "lastName": "Ernser",
+            "email": "nikitaernser@gmail.com",
+            "activated": true,
+            "langKey": "en",
+            "imageUrl": null,
+            "resetDate": null
+        },
+        "accounts": null
+    },
+     */
 }
+
+
