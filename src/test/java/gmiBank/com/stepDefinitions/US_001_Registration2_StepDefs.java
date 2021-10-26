@@ -57,11 +57,6 @@ public class US_001_Registration2_StepDefs {
             boolean  message = true;
         }
     }
-    @Then("enter valid first name {string}")
-    public void enter_valid_first_name(String valid_firstname) {
-        // registrationPage.firstNameTextBox.sendKeys(faker.name().firstName());
-        registrationPage.firstNameTextBox.sendKeys(ConfigReader.getProperty("valid_firstname"));
-    }
 
     @Then("user should not see the firstname error message")
     public void userShouldNotSeeTheFirstnameErrorMessage() {

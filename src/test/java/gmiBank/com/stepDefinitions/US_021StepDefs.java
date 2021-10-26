@@ -1,15 +1,18 @@
 package gmiBank.com.stepDefinitions;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 import gmiBank.com.pojos.Country6;
 import gmiBank.com.utilities.ConfigReader;
 import gmiBank.com.utilities.ReadText;
 import gmiBank.com.utilities.WriteToText;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+
 import org.junit.Assert;
 
 import java.io.IOException;
@@ -70,9 +73,11 @@ public class US_021StepDefs {
     @Then("Read all countries you created and validate them one by one")
     public void readAllCountriesYouCreatedAndValidateThemBy() {
 
+
         //validasyon isleminde readtext ile okuttugumuz filenames dosyasini response aldigimiz contryname karsilastirdik
         Assert.assertEquals("Text'ler eslesmedi",readTextcountryName,countryName);
 
 
     }
 }
+

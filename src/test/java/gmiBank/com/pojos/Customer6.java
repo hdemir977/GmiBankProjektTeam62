@@ -1,7 +1,6 @@
 package gmiBank.com.pojos;
 
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties (ignoreUnknown = true)
@@ -10,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Customer6 {
 //Aldigimiz butun customer bilgilerini classin icine yapistiriyoruz.
 // customer bilgileri icinden id yi aliyoruz ve saklamak icin private yapiyoruz.
+
     private int id;
     private String firstName;
     private String lastName;
@@ -23,6 +23,13 @@ public class Customer6 {
     private String ssn;
     private String createDate;
     private boolean zelleEnrolled;
+
+    private Country6 country; //country bilgileri okutabilirim
+    private String state;
+    private User6 user; //user bilgileri cagriyorum
+    private String accounts; //bu ayri json bilgi
+
+
 
     private Country6 country;//burada onceden String vardi(private String country). ancak string de bir class oldugundan ve
                             // ben Country6 classdeki datalara erisim istedigimiden String yerine Country6 classini yazabilirim.
@@ -166,6 +173,7 @@ public class Customer6 {
     public void setAccounts(String accounts) {
         this.accounts = accounts;
     }
+
 /*
     {
         "id": 94774,
@@ -202,5 +210,4 @@ public class Customer6 {
     },
      */
 }
-
 
