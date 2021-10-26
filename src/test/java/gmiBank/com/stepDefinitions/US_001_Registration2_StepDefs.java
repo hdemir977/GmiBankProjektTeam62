@@ -48,6 +48,7 @@ public class US_001_Registration2_StepDefs {
     public void enter_valid_ssn_no(String valid_ssn) {
         //  registrationPage.ssnTextBox.sendKeys(faker.idNumber().ssnValid());
         registrationPage.ssnTextBox.sendKeys(ConfigReader.getProperty("valid_ssn"));
+
     }
     @Then("user should not see the ssn error message")
     public void userShouldNotSeeTheErrorMessage() {
@@ -290,5 +291,57 @@ public class US_001_Registration2_StepDefs {
     public void seeRegistrationSavedAndVerify(String successMessage) {
 
 
+    }
+
+//===============scnerio outline ================================
+    @Given("enter valid ssn no with SO {string}")
+    public void enterValidSsnNoWithSO(String string) {
+        registrationPage.ssnTextBox.sendKeys(string);
+
+    }
+
+    @And("enter valid first name with SO {string}")
+    public void enterValidFirstNameWithSO(String string) {
+       registrationPage.firstNameTextBox.sendKeys(string);
+    }
+
+    @And("enter valid lastname with SO {string}")
+    public void enterValidLastnameWithSO(String string) {
+        registrationPage.lastNameTextBox.sendKeys(string);
+    }
+
+    @And("enter valid adress with SO {string}")
+    public void enterValidAdressWithSO(String string) {
+        registrationPage.adressTextBox.sendKeys(string);
+    }
+
+    @And("enter valid phone number with SO {string}")
+    public void enterValidPhoneNumberWithSO(String string) {
+        registrationPage.phoneNumberTextBox.sendKeys(string);
+    }
+
+    @And("enter valid username with SO {string}")
+    public void enterValidUsernameWithSO(String string) {
+        registrationPage.usernameTextBox.sendKeys(string);
+    }
+
+    @And("enter valid email adress with SO{string}")
+    public void enterValidEmailAdressWithSO(String string) {
+        registrationPage.emailTextBox.sendKeys(string);
+    }
+
+    @And("enter new password with SO {string}")
+    public void enterNewPasswordWithSO(String string) {
+        registrationPage.firstPasswordTextBox.sendKeys(string);
+    }
+
+    @And("enter new password confirmation with SO {string}")
+    public void enterNewPasswordConfirmationWithSO(String string) {
+        registrationPage.secondPasswordTextBox.sendKeys(string);
+    }
+
+    @And("user click on Register button and validates success message saved as with SO {string}")
+    public void userClickOnRegisterButtonAndValidatesSuccessMessageSavedAsWithSO(String string) {
+        registrationPage.savedMessage.isDisplayed();
     }
 }

@@ -1,4 +1,3 @@
-
 @us_001
 Feature: US001 Registration Page
 
@@ -69,28 +68,23 @@ Feature: US001 Registration Page
     Then click register button
     And see registration saved and verify success message
 
-
+  @registration_scenario
   Scenario Outline: ***** Registration valid credantials with Senario Outline ****
-    Given enter valid ssn no "<valid_ssn>"
-    And enter valid first name "<valid_firstname>"
-    And enter valid lastname "<valid_lastname>"
-    And enter valid adress "<valid_adress>"
-    And enter valid phone number "<valid_phonenumber>"
-    And enter valid username "<valid_username>"
-    And enter valid email adress "<valid_email>"
-    And enter new password "<valid_password>"
-    And enter new password confirmation "<valid_password>"
+    Given enter valid ssn no with SO "<valid_ssn>"
+    And enter valid first name with SO "<valid_firstname>"
+    And enter valid lastname with SO "<valid_lastname>"
+    And enter valid adress with SO "<valid_adress>"
+    And enter valid phone number with SO "<valid_phonenumber>"
+    And enter valid username with SO "<valid_username>"
+    And enter valid email adress with SO"<valid_email>"
+    And enter new password with SO "<valid_password>"
+    And enter new password confirmation with SO "<valid_password>"
     Then click register button
-    And user click on Register button and validates success message saved as "<message>"
+    And user click on Register button and validates success message saved as with SO "<message>"
     Examples:
       | valid_ssn   | valid_firstname | valid_lastname | valid_adress             | valid_phonenumber | valid_username | valid_email           | valid_password  | message             |
-      | 856-32-7074 | Peter4          | Pan4           | 241 Ruskin Road, Arizona | 235-456-9854      | team62peter4   | team62peter4@mail.com | Team62customer. | Registration saved! |
-
-
-
-
-
-
+      | 856-32-7075 | Peter5          | Pan5           | 245 Ruskin Road, Arizona | 235-456-9881      | team62peter5   | team62peter5@mail.com | Team62customer. | Registration saved! |
+      | 235-14-8585 | Team62          | Team62         | Apple Street             | 321-45-7896       | team6262       | team62@mail.com       | Team62bekir.    | Registration saved! |
 
 
 

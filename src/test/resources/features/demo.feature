@@ -11,12 +11,12 @@ Feature: Demo :
 
   Scenario: The user first creates a registration from the registration page.
     And click register option
-    And enter valid ssn no "345-23-8787" demo
+    And enter valid ssn no "345-23-8793" demo
     And enter valid first name
     And enter valid last name
     And enter valid adress
     And enter valid phone number
-    And enter valid username "Team62DemoUser17" demo
+    And enter valid username "Team62DemoUser23" demo
     And enter valid email
     And enter new password "1Aa.123" demo
     And enter new password confirmation "1Aa.123" demo
@@ -28,14 +28,14 @@ Feature: Demo :
      And User clicks to My Operations menu
      Then User clicks to Manage Accounts button
      Then User clicks to Create a new Account button
-     Then User enter "DemoTeam62Account30" in the Description and "5500" in the balance boxes
+     Then User enter "DemoTeam62Account33" in the Description and "5500" in the balance boxes
      Then User enter the later Date at the time of creation time.
      Then User enter Save button.
      And User checks if new account has been created demo
 
 
      Then User clicks to Create a new Account button
-     Then User enter "DemoTeam62Account31" in the Description and "5500" in the balance boxes
+     Then User enter "DemoTeam62Account34" in the Description and "5500" in the balance boxes
      Then User enter the later Date at the time of creation time.
      Then User enter Save button.
      And User checks if new account has been created demo
@@ -48,7 +48,7 @@ Feature: Demo :
     And User clicks to My Operations menu
     Then User clicks to Manage Customer Button
     Then User clicks to Create a new Customer button
-    Then User enter a valid SSN nummer "345-23-8787" in SSN box
+    Then User enter a valid SSN nummer "345-23-8793" in SSN box
     Then User clicks search button
     And enter text to Middle Initial Text Box "Ali"
     And enter a valid phone Number to phone number text box demo
@@ -58,7 +58,7 @@ Feature: Demo :
     Then User enter earlier Date in Create Date box demo
     And select from county dropdown
     And enter text "Montbaur" in State
-    And select from accounts  "DemoTeam62Account30" and "DemoTeam62Account31" accounts
+    And select from accounts  "DemoTeam62Account33" and "DemoTeam62Account34" accounts
     Then User enter Save button.
     And user logged out
 
@@ -70,12 +70,12 @@ Feature: Demo :
     And click on Administration
     And click on user management
     And click on Created date
-    And click Activate button "team62demouser17"
+    And click Activate button "team62demouser23"
     And user logged out
 
   Scenario: The user logs into his own account and creates a transfer between the two accounts.
     And click sign in option
-    And enter valid customer username "Team62DemoUser17"
+    And enter valid customer username "Team62DemoUser23"
     And enter valid customer password "1Aa.123"
     And click on sign in button demo
     And click on My Operations and My Accounts

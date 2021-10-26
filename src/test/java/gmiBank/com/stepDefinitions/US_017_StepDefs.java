@@ -62,10 +62,6 @@ public class US_017_StepDefs {
         ayhanUS017Page.loginTextBox.sendKeys(adminname);
     }
 
-    @Then("enter valid first name {string}")
-    public void enter_valid_first_name(String string) {
-        ayhanUS017Page.firstNameTextBox.sendKeys(faker.name().firstName());
-    }
 
     @Then("enter a valid last name {string}")
     public void enter_a_valid_last_name(String string) {
