@@ -9,7 +9,7 @@ Feature: "System should allow to delete states using api end point
 
     Examples: delete states
       |endpoints|id|
-      |https://www.gmibank.com/api/tp-states|/103430|
+      |https://www.gmibank.com/api/tp-states|/103431|
 
 
 

@@ -52,9 +52,9 @@ public class MyStepdefsForUS_027 {
             JsonPath jsonPath=response.jsonPath();
             String ids= jsonPath.getString("id");
             Assert.assertFalse("state did not delete", ids.contains(id));
-            System.out.println("deletetion is succesfull");
+            System.out.println("Delete was succesfull");
 
-
+        //State delete
 
         }
     }
