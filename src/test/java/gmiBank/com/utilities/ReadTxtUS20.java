@@ -2,6 +2,7 @@ package gmiBank.com.utilities;
 
 import gmiBank.com.pojos.Country6;
 import gmiBank.com.pojos.Customer6;
+import gmiBank.com.pojos.States06;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -268,6 +269,50 @@ public class ReadTxtUS20 {
         }
         return all;
     }
+
+    public static List<String> returnCountryName6List(String filePath){
+        List<String>all = new ArrayList<>();
+        try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            System.out.println(line);
+            int i = 0;
+            while (line != null) {
+                Country6 country5 = new Country6();
+                country5.setName(line.split(",")[0]);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+                System.out.println(i++);
+                all.add(country5.getName());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return all;
+    }
+
+    public static List<String> returnStates6IdList(String filePath) {
+        List<String> all = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+            System.out.println(line);
+            int i = 0;
+            while (line != null) {
+                States06 states06 = new States06();
+                states06.setId(Integer.parseInt(line.split(",")[0]));
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+                System.out.println(i++);
+                all.add(String.valueOf(states06.getId()));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return all;
+    }
+
+
 
 
 }

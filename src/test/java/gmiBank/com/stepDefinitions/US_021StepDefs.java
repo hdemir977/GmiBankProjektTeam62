@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 import gmiBank.com.pojos.Country6;
 import gmiBank.com.utilities.ConfigReader;
-import gmiBank.com.utilities.ReadText;
-import gmiBank.com.utilities.WriteToText;
+import gmiBank.com.utilities.ReadTxtUS20;
+import gmiBank.com.utilities.WriteToTxtUS20;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
@@ -29,14 +29,14 @@ public class US_021StepDefs {
     String readTextcountryName;
 
     @Given("Read all countries you created and validate them from your data set {string}")
-    public void readAllCountriesYouCreatedAndValidateThemFromYourDataSet(String endpoint_countries) throws IOException {
+    public void readAllCountriesYouCreatedAndValidateThemFromYourDataSet(String api_endpoint_countries) throws IOException {
 
         response = given().headers("Authorization",
                 "Bearer "+ ConfigReader.getProperty("token"),
                 "ContentType.Json", ContentType.JSON,
                 "Accept",ContentType.JSON)
                 .when()
-                .get(ConfigReader.getProperty(endpoint_countries))
+                .get(ConfigReader.getProperty(api_endpoint_countries))
                 .then()
                 .contentType(ContentType.JSON)
                 .extract()
@@ -59,10 +59,10 @@ public class US_021StepDefs {
        // String countryFakerNames=faker.name().title();
 
         //response'den gelen countryname'leri writetotext methodu ile framework'a yazdirdik
-        WriteToText.saveDataInFileWithCountry6Name("fileNames",country6);
+        WriteToTxtUS20.saveDataInFileWithCountry6Name("fileNames",country6);
 
         //burada Readtext ile okuma yaptik
-        List<String > readTextcountryName= ReadText.returnCountryName6List(fileNames);
+      List<String > readTextcountryName= ReadTxtUS20.returnCountryName6List(fileNames);
         System.out.println(readTextcountryName);
 
     }

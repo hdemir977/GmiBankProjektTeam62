@@ -10,7 +10,7 @@ public class StateJson {
      */
     // bu model state creation icin kalip vazifesi gormektedir.
 
-    final public static String CreateState1="{\"countryId\": 1,\"name\": \"Amsterdam\"}";
+    final public static String CreateState1="{\"countryId\": 1,\"name\": \"Honduras\"}";
     final public static String CreateState2="{\"countryId\": 1,\"name\": \"Angola\"}";
 
 

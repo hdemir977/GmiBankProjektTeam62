@@ -3,8 +3,8 @@ package gmiBank.com.stepDefinitions;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gmiBank.com.pojos.Registrants;
 import gmiBank.com.utilities.ConfigReader;
-import gmiBank.com.utilities.ReadText;
-import gmiBank.com.utilities.WriteToText;
+import gmiBank.com.utilities.ReadTxt;
+import gmiBank.com.utilities.WriteToTxt;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.RestAssured;
@@ -25,8 +25,12 @@ public class US_023StepDefs {
 
     @Given("Read all registrants you created and validate them from your data set {string}")
     public void readAllRegistrantsYouCreatedAndValidateThemFromYourDataSet(String string) {
-        response = RestAssured.given().accept(ContentType.JSON).auth().
-                oauth2(ConfigReader.getProperty("token")).when().get(string);
+        response = RestAssured
+                .given().
+                accept(ContentType.JSON).auth().
+                oauth2(ConfigReader.getProperty("token"))
+                .when()
+                .get(string);
         response.prettyPrint();
 
     }
@@ -42,7 +46,7 @@ public class US_023StepDefs {
         for (int i = 0; i < registrants.length; i++) {
             ssnList.add(String.valueOf(registrants[i].getSsn()));
         }
-        //System.out.println(ssnList); Butun SSN'leri getirir
+        //System.out.println(ssnList); Butun SSN'leri getirdi
 
         List<String> expectedList=new ArrayList<>();
         expectedList.add("123-12-4446");

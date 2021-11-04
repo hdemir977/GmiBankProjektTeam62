@@ -2,6 +2,7 @@ package gmiBank.com.utilities;
 
 import gmiBank.com.pojos.Country6;
 import gmiBank.com.pojos.Customer6;
+import gmiBank.com.pojos.States06;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -10,6 +11,8 @@ import java.util.Map;
 
 public class WriteToTxtUS20 {
     public static void saveDataInFileWithSSN(String fileName, Customer6[] customers) {
+
+
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
             for (int i = 0; i < customers.length; i++)
@@ -116,7 +119,7 @@ public class WriteToTxtUS20 {
 
             for (int i = 0; i < customers.length; i++) {
 
-                writer.append(customers[i].getId()+" "+ customers[i].getFirstName() + " , " + customers[i].getLastName() + "," + customers[i].getCity() + " , " + customers[i].getAddress() + "\n");
+                writer.append(customers[i].getId() + " " + customers[i].getFirstName() + " , " + customers[i].getLastName() + "," + customers[i].getCity() + " , " + customers[i].getAddress() + "\n");
                 if (customers[i].getUser() != null)
                     writer.append(customers[i].getUser().getFirstName());
                 if (customers[i].getCountry() != null)
@@ -168,8 +171,6 @@ public class WriteToTxtUS20 {
     }
 
 
-
-
 //    public static void saveDataInFileWithStateid(String fileName, States[] sstates)
 //
 //
@@ -189,7 +190,7 @@ public class WriteToTxtUS20 {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
             for (int i = 0; i < countries.length; i++)
-                if(countries[i]!=null) {
+                if (countries[i] != null) {
                     writer.append(countries[i].getName() + "\n");
                 }
             writer.close();
@@ -218,7 +219,38 @@ public class WriteToTxtUS20 {
     }
 
 
+    public static void saveDataInFileWithCountry6Name(String fileName, Country6[] countries) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+            for (int i = 0; i < countries.length; i++)
+                if (countries[i] != null) {
+                    writer.append(countries[i].getName() + "\n");
+                }
+            writer.close();
+        } catch (Exception e) {
+        }
+    }
 
 
+    public static void saveDataInFileWithidStates(String fileName, States06[] states06) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+            for (int i = 0; i < states06.length; i++)
+                writer.append(states06[i].getId() + "\n");
+            writer.close();
+        } catch (Exception e) {
+        }
 
+    }
+
+    public static void saveAllCustomersComingFromDB(String fileName, List<Object> allCustomer)  {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+            for (int i=0; i<allCustomer.size(); i++) {
+                writer.append(allCustomer.get(i) + ",\n" );
+            }
+            writer.close();
+        } catch(Exception e){
+        }
+    }
 }
